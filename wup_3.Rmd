@@ -35,10 +35,24 @@ basicCN + geom_boxplot()
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
 
+
+
+
+
+
 ## Numerical Summarys 
+```{r}
+favstats(alcohol~Seat,data=ucdavis1)
+```
+According to the chart the back row drinks 8.5 more drinks than the middle row , drinking only 3.3 drinks per week.The front row drinks 1.7 per week.It is reasonable to assume that they are not drinking the same amount.
+
+
 
 ## Inferential Tests
-
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
 ## Conclusions
 
 
